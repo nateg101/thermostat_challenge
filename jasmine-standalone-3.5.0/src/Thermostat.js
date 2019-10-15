@@ -52,3 +52,11 @@ Thermostat.prototype.isMAX_TEMP = function(){
   }
   return this.temperature === this.MAX_TEMP_SAVE_OFF;
 }
+
+Thermostat.prototype.energyUse = function(){
+  if (this.temperature < 18){
+    return 'low';}
+  else if (this.temperature > 25){
+    return 'high';}
+  else {return 'medium';}
+}

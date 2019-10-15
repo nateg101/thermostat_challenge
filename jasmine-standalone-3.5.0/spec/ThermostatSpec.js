@@ -71,4 +71,25 @@ describe('Thermostat', function(){
       expect(thermostat.getTemp()).toEqual(20)
     })
   })
+
+  describe("Energy usage indicator", function(){
+    it("returns 'low' if temperature is < 18", function(){
+      for (var i = 0; i < 5; i++){
+      thermostat.down();
+    }
+    expect(thermostat.energyUse()).toEqual('low')
+    })
+
+    it("returns 'high' if temperature is > 25", function(){
+      thermostat.powerSaverOff();
+      for (var i = 0; i < 20; i++){
+      thermostat.up();
+    }
+    expect(thermostat.energyUse()).toEqual('high')
+    })
+
+    it("returns 'medium' if 18 < temperature < 25 ", function(){
+    expect(thermostat.energyUse()).toEqual('medium')
+    })
+  })
 });
