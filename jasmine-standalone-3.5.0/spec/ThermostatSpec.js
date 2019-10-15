@@ -44,6 +44,7 @@ describe('Thermostat', function(){
       expect(thermostat.getTemp()).toEqual(10)
     });
     it("has a max temperature of 32 with the power saver off", function(){
+      thermostat.powerSaverOff();
       for (var i = 0; i < 15; i++){
       thermostat.up();
       }
@@ -57,4 +58,17 @@ describe('Thermostat', function(){
       expect(thermostat.getTemp()).toEqual(25)
     });
   });
+
+  describe("Reset function",function(){
+    it("can reset the temperate from a higher temp", function(){
+      thermostat.up();
+      thermostat.reset();
+      expect(thermostat.getTemp()).toEqual(20)
+    })
+    it("can reset the temperate from a lower temp", function(){
+      thermostat.down();
+      thermostat.reset();
+      expect(thermostat.getTemp()).toEqual(20)
+    })
+  })
 });
