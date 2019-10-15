@@ -17,7 +17,18 @@ $(document).ready(function(){
     updateTemp();
   })
 
+  $('#power_save_on').click(function(){
+    thermostat.powerSaverOn();
+    $('#power_save_status').text('On')
+  })
+
+  $('#power_save_off').click(function(){
+    thermostat.powerSaverOff();
+    $('#power_save_status').text('Off')
+  })
+
   function updateTemp(){
     $('#temperature').text(thermostat.temperature);
+    $('#temperature').attr('class', thermostat.energyUse());
   }
 })
