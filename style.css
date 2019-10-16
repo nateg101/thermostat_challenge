@@ -36,6 +36,7 @@ h1 {
   position: relative;
   font-family: 'Hepta Slab', serif;
   text-align: center;
+  font-weight: bold;
 }
 
 h2 {
@@ -45,6 +46,12 @@ h2 {
   top: 100px;
   position: relative;
   font-size: 500%;
+}
+h3 {
+  position: relative;
+  font-family: 'Hepta Slab', serif;
+  text-align: center;
+  font-size: 150%;
 }
 
 button {

@@ -14,15 +14,15 @@
   <body>
 
   <h1> Thermostat </h1>
-  <h1> Current temperature: <span id="current_temp"> &#8451; </span> </h1>
-  <h1> Location: <span id="current_loc"> </span>, <span id="current_country"></span> </h1>
+  <h3> Current temperature: <span id="current_temp"> </span> <span>&#8451;</span></h3>
+  <h3> Location: <span id="current_loc"> </span>, <span id="current_country"></span> </h3>
   <form class="city_form" id="choose_city">
     <input id="current_city" type="text" placeholder="Tell me where you live."></input>
     <input type="submit"></input>
   </form>
   <br>
       <div class ="holder">
-      <h2 id="temperature"></h2>
+      <h2> <span id="temperature" ></span><span>&#8451;</span> </h2>
       <br>
       <button id="temp_up">Hotter</button>
       <button id="temp_down">Cooler</button>
@@ -31,7 +31,7 @@
       <br>
         <div class="power_save_radios" data-toggle="buttons">
           <label class="btn btn-secondary active" id="power_save_status" > On
-            <input type="radio" name="options" autocomplete="off" checked>
+            <input type="radio" name="options" autocomplete="off">
           </label>
           <label class="btn btn-secondary">
             <input type="radio" name="options" id="power_save_on" autocomplete="off"> Power Save On
