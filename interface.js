@@ -2,22 +2,21 @@ $(document).ready(function(){
   let thermostat = new Thermostat();
   $('#temperature').text(thermostat.temperature);
 
-
   $('#choose_city').submit(function(event) {
     event.preventDefault();
-    var city = $('#current_city').val();
-    $.get('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric', function(data) {
-    $('#current_temp').text(data.main.temp);
-    });
-    $.get('https://api.openweathermap.org/data/2.5/weather?q='+city+'&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric', function(data) {
-    $('#current_city').text(data.name);
-    });
-    $.get('https://api.openweathermap.org/data/2.5/weather?q='+city+'&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric', function(data) {
-    $('#current_country').text(data.sys.country);
-    });
-    $('#current_loc').text(city);
+    showWeather($('#current_city').val())
   })
 
+  function showWeather(city) {
+    let url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city;
+    let apiToken = '&appid=a3d9eb01d4de82b9b8d0849ef604dbed';
+    let units = '&units=metric'
+    $.get(url + apiToken + units, function(data) {
+      $('#current_temp').text(data.main.temp);
+      $('#current_country').text(data.sys.country);
+      $('#current_loc').text(data.name);
+    })
+  }
 
   $('#temp_up').click(function(){
     thermostat.up();
