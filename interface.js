@@ -1,9 +1,23 @@
 $(document).ready(function(){
   let thermostat = new Thermostat();
   $('#temperature').text(thermostat.temperature);
-  $.get('https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric', function(data) {
-  $('#current_temp').text(data.main.temp);
-  });
+
+
+  $('#choose_city').submit(function(event) {
+    event.preventDefault();
+    var city = $('#current_city').val();
+    $.get('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric', function(data) {
+    $('#current_temp').text(data.main.temp);
+    });
+    $.get('https://api.openweathermap.org/data/2.5/weather?q='+city+'&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric', function(data) {
+    $('#current_city').text(data.name);
+    });
+    $.get('https://api.openweathermap.org/data/2.5/weather?q='+city+'&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric', function(data) {
+    $('#current_country').text(data.sys.country);
+    });
+    $('#current_loc').text(city);
+  })
+
 
   $('#temp_up').click(function(){
     thermostat.up();
