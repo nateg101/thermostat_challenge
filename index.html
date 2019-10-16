@@ -2,10 +2,14 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Hepta+Slab&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Kanit&display=swap');
+    </style>
     <title>Thermostat</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css"</link>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> </head>
+    <link rel="stylesheet" type="text/css" href="style.css"> </head>
   </head>
   <body>
     <h1> Thermostat </h1>
@@ -17,7 +21,8 @@
     <button id="temp_down">Cooler</button>
     <button id="reset">Reset</button>
     <br>
-    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <br>
+    <div class="power_save_radios" data-toggle="buttons">
       <label class="btn btn-secondary active" id="power_save_status" > On
         <input type="radio" name="options" autocomplete="off" checked>
       </label>

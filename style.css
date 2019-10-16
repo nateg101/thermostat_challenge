@@ -9,3 +9,20 @@
 .high {
   color: red
 }
+h1 {
+  font-family: 'Hepta Slab', serif;
+}
+h2 {
+  align-content: center;
+  font-family: 'Kanit', sans-serif;
+}
+
+button {
+  font-family: 'Kanit', sans-serif;
+}
+
+body {
+  align-content: center;
+  margin: auto;
+  padding: 100px;
+}
