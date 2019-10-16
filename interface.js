@@ -15,6 +15,7 @@ $(document).ready(function(){
   $('#reset').click(function(){
     thermostat.reset();
     updateTemp();
+    alert("You've reset the temperature.")
   })
 
   $('#power_save_on').click(function(){

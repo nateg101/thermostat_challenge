@@ -9,20 +9,49 @@
 .high {
   color: red
 }
-h1 {
-  font-family: 'Hepta Slab', serif;
+body {
+  background-color: #DCDCDC;
 }
+
+.holder {
+  align: center;
+  height: 500px;
+  width: 500px;
+  border: 5px #cec9d6 solid;
+  border-radius: 20%;
+  margin: auto;
+  background: #009FFF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #ec2F4B, #009FFF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #ec2F4B, #009FFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  box-shadow: 8px 6px 5px #CCCC;
+}
+
+.power_save_radios {
+  margin: auto;
+  position: relative;
+  top: 150px;
+  left: 70px;
+}
+h1 {
+  position: relative;
+  font-family: 'Hepta Slab', serif;
+  text-align: center;
+}
+
 h2 {
+  text-align: center;
   align-content: center;
   font-family: 'Kanit', sans-serif;
+  top: 100px;
+  position: relative;
+  font-size: 500%;
 }
 
 button {
   font-family: 'Kanit', sans-serif;
-}
-
-body {
-  align-content: center;
+  position: relative;
   margin: auto;
-  padding: 100px;
+  top: 150px;
+  left: 150px;
+  height: 25px;
 }
