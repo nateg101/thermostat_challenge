@@ -55,3 +55,9 @@ button {
   left: 150px;
   height: 25px;
 }
+
+.city_form {
+  margin: auto;
+  position: relative;
+  text-align: center;
+}
