@@ -2,8 +2,10 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="colour.css"</link>
     <title>Thermostat</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css"</link>
   </head>
   <body>
     <h1> Thermostat </h1>
@@ -15,10 +17,17 @@
     <button id="temp_down">Cooler</button>
     <button id="reset">Reset</button>
     <br>
-    Power Saving Mode is <span id="power_save_status">On</span>
-    <br>
-    <button id="power_save_on">Power Save On</button>
-    <button id="power_save_off">Power Save Off</button>
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-secondary active" id="power_save_status" > On
+        <input type="radio" name="options" autocomplete="off" checked>
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="power_save_on" autocomplete="off"> Power Save On
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="power_save_off" autocomplete="off"> Power Save off
+      </label>
+    </div>
 
     <script
     src="https://code.jquery.com/jquery-3.4.1.js"

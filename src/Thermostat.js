@@ -48,9 +48,9 @@ Thermostat.prototype.isMIN_TEMP = function(){
 
 Thermostat.prototype.isMAX_TEMP = function(){
   if (this.isPowerSaver()) {
-    return this.temperature === this.MAX_TEMP_SAVE_ON;
+    return this.temperature >= this.MAX_TEMP_SAVE_ON;
   }
-  return this.temperature === this.MAX_TEMP_SAVE_OFF;
+  return this.temperature >= this.MAX_TEMP_SAVE_OFF;
 }
 
 Thermostat.prototype.energyUse = function(){

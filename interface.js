@@ -20,11 +20,13 @@ $(document).ready(function(){
   $('#power_save_on').click(function(){
     thermostat.powerSaverOn();
     $('#power_save_status').text('On')
+    updateTemp();
   })
 
   $('#power_save_off').click(function(){
     thermostat.powerSaverOff();
-    $('#power_save_status').text('Off')
+    $('#power_save_status').text('Off');
+    updateTemp();
   })
 
   function updateTemp(){
