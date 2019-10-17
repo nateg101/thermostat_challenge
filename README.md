@@ -37,7 +37,7 @@ As a user
 I want to reset the temperature
 The reset should change the temperature to 20.
 ```
-### User Story 
+### User Story 6
 
 ```
 As a user  
