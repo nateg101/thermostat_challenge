@@ -21,17 +21,20 @@ $(document).ready(function(){
   $('#temp_up').click(function(){
     thermostat.up();
     updateTemp();
+    sendState();
   })
 
   $('#temp_down').click(function(){
     thermostat.down();
     updateTemp();
+    sendState();
   })
 
   $('#reset').click(function(){
     thermostat.reset();
     updateTemp();
     alert("You've reset the temperature.")
+    sendState();
   })
 
   $('#power_save_on').click(function(){
@@ -50,4 +53,16 @@ $(document).ready(function(){
     $('#temperature').text(thermostat.temperature);
     $('#temperature').attr('class', thermostat.energyUse());
   }
+
+  $.get('http://localhost:4567/update', function(data) {
+    thermostat.temperature = Number(data)
+    console.log(data)
+    $('#temperature').text(thermostat.temperature);
+  });
+
+  function sendState() {
+    var send = {temperature: thermostat.temperature}
+    $.post('http://localhost:4567/retrieve', send);
+  };
+
 })
